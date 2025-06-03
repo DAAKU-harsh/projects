@@ -4,12 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OTM-Over The Moon</title>
+  <title>OTM - Over The Moon</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
     .parent {
@@ -22,11 +32,12 @@
       margin: auto;
       color: #ff6f00;
       font-family: Gilroy, Arial, Helvetica Neue, sans-serif;
+      text-align: center;
     }
 
     .heading2 {
       background-image: url(https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg?semt=ais_items_boosted&w=740);
-      width: 100vw;
+      width: 100%;
       height: 70vh;
       display: flex;
       background-repeat: repeat-x;
@@ -39,30 +50,36 @@
       font-family: Gilroy, Arial, Helvetica Neue, sans-serif;
       position: relative;
       animation: slideBg 60s linear infinite;
-      animation-iteration-count: infinite;
     }
+
     @keyframes slideBg {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 1000px 0;
-  }
-
- 
-}@keyframes rotate-image{
-    from{
-        transform:rotate(0deg);
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 1000px 0;
+      }
     }
-    to {
-        transform:rotate(360deg);
-    }
-}
 
+    @keyframes rotate-image {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
     .heading2 h1 {
       margin: 0;
       padding: 0;
+      font-size: 60px;
+      text-align: center;
+    }
+
+    .heading2 h3 {
+      font-size: 21px;
+      text-align: center;
     }
 
     .heading2::before {
@@ -70,7 +87,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100vw;
+      width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 1;
@@ -89,6 +106,7 @@
       font-size: 15px;
       color: azure;
       margin-top: 20px;
+      border: none;
     }
 
     .dishes {
@@ -96,26 +114,29 @@
       gap: 30px;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
+      padding: 20px;
     }
 
     .dish1 {
-      height: 300px;
+      height: auto;
       width: 300px;
       text-align: center;
       background-color: #fff7f0;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       font-family: Gilroy, Arial, Helvetica Neue, sans-serif;
-    }
-    .dish1:hover{
-        transform: scale(1.1);
+      transition: transform 0.3s ease;
+      padding: 10px;
     }
 
-    
+    .dish1:hover {
+      transform: scale(1.1);
+    }
 
     .section h1 {
       text-align: center;
-      padding: 50px;
+      padding: 50px 20px 20px;
       font-size: 2.5rem;
       color: #ff6f00;
       font-family: Gilroy, Arial, Helvetica Neue, sans-serif;
@@ -133,7 +154,7 @@
 
     .section2 h1 {
       text-align: center;
-      padding: 80px 0 30px;
+      padding: 80px 20px 30px;
       font-size: 2.5rem;
       color: #ff6f00;
       font-family: Gilroy, Arial, Helvetica Neue, sans-serif;
@@ -142,18 +163,20 @@
     .section2 p {
       text-align: center;
       font-family: 'Segoe UI', sans-serif;
-      padding-bottom: 90px;
+      padding: 0 20px 90px;
     }
 
     .footer {
       background-color: #ff6f00;
-      height: 200px;
+      height: auto;
+      padding: 30px 20px;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: 'Segoe UI', sans-serif;
       color: #fff7f0;
       flex-direction: column;
+      text-align: center;
     }
 
     /* Sidebar toggle */
@@ -189,7 +212,7 @@
       flex-direction: column;
       gap: 10px;
       padding-left: 10px;
-      
+      overflow-y: auto;
     }
 
     .sidebar label {
@@ -208,47 +231,40 @@
     #sidebar-toggle:checked~.sidebar {
       left: 0;
     }
+
     @media (max-width: 768px) {
-  .dishes {
-    flex-direction: column;
-    align-items: center;
-  }
+      .dishes {
+        flex-direction: column;
+        align-items: center;
+      }
 
-  .dish1 {
-    width: 80%;
-    height: auto;
-  }
+      .dish1 {
+        width: 80%;
+        height: auto;
+      }
 
-  .image, .image2 {
-    width: 100%;
-    height: auto;
-  }
+      .heading {
+        font-size: 3vh;
+        text-align: center;
+      }
 
-  .heading {
-    font-size: 3vh;
-    text-align: center;
-  }
+      .heading2 h1 {
+        font-size: 8vw;
+      }
 
-  .heading2 h1 {
-    font-size: 8vw;
-    text-align: center;
-  }
+      .heading2 h3 {
+        font-size: 4vw;
+      }
 
-  .heading2 h3 {
-    font-size: 4vw;
-    text-align: center;
-  }
-
-  .button {
-    font-size: 4vw;
-    padding: 8px 16px;
-  }
-}
-
+      .button {
+        font-size: 4vw;
+        padding: 8px 16px;
+      }
+    }
   </style>
 </head>
 
-<body> 
+<body>
 
   <!-- Hidden checkbox for toggling sidebar -->
   <input type="checkbox" id="sidebar-toggle" />
@@ -258,9 +274,12 @@
 
   <!-- Sidebar -->
   <div class="sidebar">
-    <label for="sidebar-toggle"><a href="#">Home</a></label><hr>
-    <label for="sidebar-toggle"><a href="#">About</a></label><hr>
-    <label for="sidebar-toggle"><a href="#">Contact</a></label><hr>
+    <label for="sidebar-toggle"><a href="#">Home</a></label>
+    <hr>
+    <label for="sidebar-toggle"><a href="#">About</a></label>
+    <hr>
+    <label for="sidebar-toggle"><a href="#">Contact</a></label>
+    <hr>
   </div>
 
   <!-- Header -->
@@ -270,8 +289,8 @@
 
   <!-- Hero section -->
   <div class="heading2">
-    <h1 style="font-size: 60px;"> Welcome to OTM</h1>
-    <h3 style="font-size: 21px;">Serving Kozhikode's finest near NIT Calicut</h3>
+    <h1>Welcome to OTM</h1>
+    <h3>Serving Kozhikode's finest near NIT Calicut</h3>
     <button class="button">Explore Menu</button>
   </div>
 
@@ -295,8 +314,9 @@
 
   <section class="section2">
     <h1>About Us</h1>
-    <p>OTM (On The Menu) is your go-to destination for authentic Kerala dishes near NIT Calicut.
-      <br />With a passion for traditional flavors and modern presentation, we make your dining experience<br />unforgettable.
+    <p>
+      OTM (On The Menu) is your go-to destination for authentic Kerala dishes near NIT Calicut.
+      <br />With a passion for traditional flavors and modern presentation, we make your dining experience unforgettable.
     </p>
   </section>
 
