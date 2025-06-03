@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTM-Over The Moon</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .parent {
+      display: flex;
+      height: 10vh;
+    }
+
+    .heading {
+      font-size: 5vh;
+      margin: auto;
+      color: #ff6f00;
+      font-family: Gilroy, Arial, Helvetica Neue, sans-serif;
+    }
+
+    .heading2 {
+      background-image: url(https://img.freepik.com/free-photo/top-view-table-full-delicious-food-composition_23-2149141352.jpg?semt=ais_items_boosted&w=740);
+      width: 100vw;
+      height: 70vh;
+      display: flex;
+      background-repeat: repeat-x;
+      background-size: cover;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: aliceblue;
+      border-top: 3px solid #ff6f00;
+      font-family: Gilroy, Arial, Helvetica Neue, sans-serif;
+      position: relative;
+      animation: slideBg 60s linear infinite;
+      animation-iteration-count: infinite;
+    }
+    @keyframes slideBg {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+
+ 
+}@keyframes rotate-image{
+    from{
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+
+    .heading2 h1 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .heading2::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .heading2>* {
+      position: relative;
+      z-index: 2;
+    }
+
+    .button {
+      cursor: pointer;
+      background-color: #ff6f00;
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 15px;
+      color: azure;
+      margin-top: 20px;
+    }
+
+    .dishes {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dish1 {
+      height: 300px;
+      width: 300px;
+      text-align: center;
+      background-color: #fff7f0;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      font-family: Gilroy, Arial, Helvetica Neue, sans-serif;
+    }
+    .dish1:hover{
+        transform: scale(1.1);
+    }
+
+    
+
+    .section h1 {
+      text-align: center;
+      padding: 50px;
+      font-size: 2.5rem;
+      color: #ff6f00;
+      font-family: Gilroy, Arial, Helvetica Neue, sans-serif;
+    }
+
+    .image {
+      height: 270px;
+      animation: rotate-image 5s linear infinite;
+    }
+
+    .image2 {
+      width: 250px;
+      animation: rotate-image 5s linear infinite;
+    }
+
+    .section2 h1 {
+      text-align: center;
+      padding: 80px 0 30px;
+      font-size: 2.5rem;
+      color: #ff6f00;
+      font-family: Gilroy, Arial, Helvetica Neue, sans-serif;
+    }
+
+    .section2 p {
+      text-align: center;
+      font-family: 'Segoe UI', sans-serif;
+      padding-bottom: 90px;
+    }
+
+    .footer {
+      background-color: #ff6f00;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff7f0;
+      flex-direction: column;
+    }
+
+    /* Sidebar toggle */
+    #sidebar-toggle {
+      display: none;
+    }
+
+    .menu-icon {
+      position: fixed;
+      top: 7px;
+      left: 20px;
+      font-size: 30px;
+      color: #ff6f00;
+      background-color: #fff;
+      padding: 8px 12px;
+      border-radius: 4px;
+      border: 2px solid #ff6f00;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100vh;
+      background-color: #ff6f00;
+      padding-top: 60px;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 10px;
+      
+    }
+
+    .sidebar label {
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: white;
+      display: inline-block;
+      padding: 8px 0;
+    }
+
+    /* Slide sidebar in when checked */
+    #sidebar-toggle:checked~.sidebar {
+      left: 0;
+    }
+  </style>
+</head>
+
+<body> 
+
+  <!-- Hidden checkbox for toggling sidebar -->
+  <input type="checkbox" id="sidebar-toggle" />
+
+  <!-- Menu icon -->
+  <label for="sidebar-toggle" class="menu-icon">&#9776;</label>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <label for="sidebar-toggle"><a href="#">Home</a></label><hr>
+    <label for="sidebar-toggle"><a href="#">About</a></label><hr>
+    <label for="sidebar-toggle"><a href="#">Contact</a></label><hr>
+  </div>
+
+  <!-- Header -->
+  <div class="parent">
+    <div class="heading">OTM - Over The Moon</div>
+  </div>
+
+  <!-- Hero section -->
+  <div class="heading2">
+    <h1 style="font-size: 60px;"> Welcome to OTM</h1>
+    <h3 style="font-size: 21px;">Serving Kozhikode's finest near NIT Calicut</h3>
+    <button class="button">Explore Menu</button>
+  </div>
+
+  <section class="section">
+    <h1>Popular Dishes</h1>
+    <div class="dishes">
+      <div class="dish1">
+        <h3>Mushroom Fried Rice</h3>
+        <img src="mushroom-rice-recipe-mushroom-pulav-mushroom-fried-rice-1-682x1024-removebg-preview.png" alt="Fried Rice" class="image" />
+      </div>
+      <div class="dish1">
+        <h3>Baby Corn Fried Rice</h3>
+        <img src="top-view-fried-rice-pork-260nw-2332077821-removebg-preview.png" alt="Baby Corn" class="image" />
+      </div>
+      <div class="dish1">
+        <h3>Hyderabadi Biryani</h3>
+        <img src="biryani.png" alt="Biryani" class="image2" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section2">
+    <h1>About Us</h1>
+    <p>OTM (On The Menu) is your go-to destination for authentic Kerala dishes near NIT Calicut.
+      <br />With a passion for traditional flavors and modern presentation, we make your dining experience<br />unforgettable.
+    </p>
+  </section>
+
+  <footer class="footer">
+    <h4>📍 Near NIT Calicut, Kozhikode, Kerala</h4>
+    <h4>📞 +91 98765 43210 | ✉️ otmkozhikode@example.com</h4>
+    <h5>© 2025 OTM Restaurant</h5>
+  </footer>
+
+</body>
+
+</html>
